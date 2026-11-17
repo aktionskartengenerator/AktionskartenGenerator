@@ -4,8 +4,11 @@
 
 ## Deutsch
 
-AktionskartenGenerator ist ein Programm für Windows und Linux, mit dem du Aktionskarten erstellst:
-Kartenausschnitt wählen, eigene Inhalte darauflegen, als JPG oder PDF ausgeben.
+Mit dem Programm kannst du für Aktionen, Demos und Ähnliches Karten zum Ausdrucken und Herumschicken
+erstellen – ohne Vorkenntnisse, mit automatischem Routenfinder und vielen Gestaltungsmöglichkeiten.
+Vorbild für das Projekt war das ehemalige aktionskarten noblogs.
+
+Installer für Linux und Windows findest du unter „Releases“.
 
 ### Funktionen
 
@@ -65,8 +68,11 @@ Copyright © AktionskartenGenerator contributors
 
 ## English
 
-AktionskartenGenerator is a program for Windows and Linux for creating action maps:
-choose a map section, place your own content on it, export as JPG or PDF.
+With this program you can create maps for actions, demonstrations and similar events, to print and
+pass around – no prior knowledge needed, with an automatic route finder and many design options.
+The project was inspired by the former aktionskarten noblogs.
+
+Installers for Linux and Windows are available under “Releases”.
 
 ### Features
 
