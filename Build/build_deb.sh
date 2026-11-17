@@ -31,6 +31,22 @@ mkdir -p "$WURZEL/DEBIAN" "$WURZEL/opt" "$WURZEL/usr/bin" "$WURZEL/usr/share/app
 cp -a "$BAU/dist/$APP" "$WURZEL/opt/$PAKET"
 ln -s "/opt/$PAKET/$APP" "$WURZEL/usr/bin/$PAKET"
 cp Info_Linux.txt "$WURZEL/usr/share/doc/$PAKET/Info.txt"
+# Lizenztexte: eigener Code, Fremdanteile, Python der Bauumgebung.
+LIZ="$WURZEL/usr/share/doc/$PAKET/Lizenzen"
+mkdir -p "$LIZ"
+cp LICENSE "$LIZ/LICENSE.txt"
+cp THIRD-PARTY-NOTICES.md Lizenzen/* "$LIZ/"
+cp App/maplibre/LICENSE.txt "$LIZ/MapLibre-LICENSE.txt"
+cp "$("$VENV/bin/python" -c 'import sys, os; print(os.path.join(sys.base_prefix, "lib", "python%d.%d" % sys.version_info[:2], "LICENSE.txt"))')" "$LIZ/Python-LICENSE.txt"
+cat > "$WURZEL/usr/share/doc/$PAKET/copyright" <<COPYRIGHT
+AktionskartenGenerator
+Copyright: AktionskartenGenerator contributors
+License: GPL-3.0-or-later
+Source: https://github.com/aktionskartengenerator/AktionskartenGenerator
+
+The full license texts, including those of the bundled third-party parts,
+are in /usr/share/doc/$PAKET/Lizenzen.
+COPYRIGHT
 # Icon: die Vorlage hat 149 px; ohne Vergrößern passt 128 px.
 "$VENV/bin/python" - "$PROJEKT/Icon/${APP}_Icon.png" "$WURZEL/usr/share/icons/hicolor/128x128/apps/$PAKET.png" <<'PY'
 import sys

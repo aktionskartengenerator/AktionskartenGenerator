@@ -80,7 +80,15 @@ tar cf - --exclude=Build/_temp --exclude=__pycache__ App Build Icon | tar xf - -
 [ -f "$C/proj/dist/$APP/$APP.exe" ] || { echo "PyInstaller hat keine exe erzeugt"; exit 1; }
 ! find "$C/proj/dist" -iname 'icuuc*' | grep -q . || { echo "Platzhalter icuuc.dll ist im Paket gelandet"; exit 1; }
 
-# 5. Setup bauen.
+# 5. Lizenztexte fuer das Paket zusammenstellen.
+LIZ="$BAU/Lizenzen"
+rm -rf "$LIZ"; mkdir -p "$LIZ"
+cp LICENSE "$LIZ/LICENSE.txt"
+cp THIRD-PARTY-NOTICES.md Lizenzen/* "$LIZ/"
+cp App/maplibre/LICENSE.txt "$LIZ/MapLibre-LICENSE.txt"
+cp "$C/Python/LICENSE.txt" "$LIZ/Python-LICENSE.txt"
+
+# 6. Setup bauen.
 ZIEL="$PROJEKT/Installer/${APP}_${VERSION//./_}_win_amd64.exe"
-makensis -V2 -DVERSION="$VERSION" -DDIST="$C/proj/dist/$APP" -DPROJEKT="$PROJEKT" -DOUTFILE="$ZIEL" Build/$APP.nsi
+makensis -V2 -DVERSION="$VERSION" -DDIST="$C/proj/dist/$APP" -DPROJEKT="$PROJEKT" -DLIZENZEN="$LIZ" -DOUTFILE="$ZIEL" Build/$APP.nsi
 ls -la "$ZIEL"

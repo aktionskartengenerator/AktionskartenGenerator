@@ -1,7 +1,7 @@
 ﻿; AktionskartenGenerator - Installer (NSIS 3, 64 Bit, fuer alle Benutzer)
 ; Abgeleitet aus der Installer-Vorlage (AktionskartenGenerator.nsi): gleiche Seiten,
 ; gleiches dunkles Design. Weggelassen: mitgelieferte Hilfsprogramme und die
-; Firewall-Freigabe (dieses Programm oeffnet keinen Port). Dazu: Info.txt
+; Firewall-Freigabe (dieses Programm oeffnet keinen Port). Dazu: Info.txt und der Ordner Lizenzen
 ; im Programmordner und das Entfernen des Cache-Ordners bei der Deinstallation.
 ;
 ; Bauen:  makensis -DVERSION=2.9 -DDIST=<Ordner aus PyInstaller> Build/AktionskartenGenerator.nsi
@@ -41,6 +41,9 @@ SetCompressorDictSize 64
 !endif
 !ifndef PROJEKT
   !define PROJEKT ".."            ; Projektordner: Icon und Info
+!endif
+!ifndef LIZENZEN
+  !define LIZENZEN "_temp/Lizenzen"   ; von build_wine.sh zusammengestellt
 !endif
 !ifndef OUTFILE
   !define OUTFILE "../Installer/AktionskartenGenerator_${VERSION_FILE}_win_amd64.exe"
@@ -282,6 +285,9 @@ Section "AktionskartenGenerator"
   SetOutPath "$INSTDIR"
   File /r "${DIST}/*"
   File "/oname=Info.txt" "${PROJEKT}/Info_Win.txt"
+  SetOutPath "$INSTDIR\Lizenzen"
+  File "${LIZENZEN}/*"
+  SetOutPath "$INSTDIR"
   WriteUninstaller "$INSTDIR\Uninstall.exe"
 
   ; Verknuepfungen nur nach Wahl (Seite "Verknuepfungen"; still: Vorgaben).
@@ -320,6 +326,7 @@ Section "Uninstall"
 
   ; nur die eigenen Dateien entfernen - nie den ganzen Ordner blind loeschen
   RMDir /r "$INSTDIR\_internal"
+  RMDir /r "$INSTDIR\Lizenzen"
   Delete "$INSTDIR\${EXENAME}"
   Delete "$INSTDIR\Info.txt"
   Delete "$INSTDIR\Uninstall.exe"
