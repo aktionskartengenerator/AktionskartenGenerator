@@ -1,0 +1,97 @@
+AktionskartenGenerator 2.9 – Linux
+==================================
+
+Zielsystem
+- Gebaut und geprüft für Linux Mint 22 (entspricht Ubuntu 24.04). Auf anderen aktuellen
+  Ubuntu-/Debian-Systemen sollte es ebenso laufen.
+
+Installation (.deb)
+- Installieren (im Ordner mit dem Paket):
+  sudo apt install ./AktionskartenGenerator_2_9_linux_amd64.deb
+- Starten: über das Anwendungsmenü (Grafik, „AktionskartenGenerator“) oder im Terminal:
+  aktionskartengenerator
+- Aktualisieren: ein neueres Paket genauso installieren. Es ersetzt die installierte Version.
+- Deinstallieren:
+  sudo apt remove aktionskartengenerator
+- Python musst du dafür nicht installieren; das Paket bringt alles mit.
+- Das Programm schreibt kein Debug-Log.
+- Diese Info liegt danach unter /usr/share/doc/aktionskartengenerator/Info.txt.
+
+Neu in 2.9
+- Kartenart im Reiter „Karten Ausschnitt / Orte“: Raster oder Vektor. Die Wahl wird im Projekt gespeichert.
+- Ein neues Projekt startet in Vektor mit der Kartenebene „Fahrrad“ und eingeschaltetem Filter
+  „Kartennamen / Symbole“ (Bildung, Gesundheit, Gastronomie, Öffentliche Einrichtungen, ÖPNV, Unterkunft;
+  Regler „POIs ab Zoom“ ganz links). „Zurücksetzen“ stellt diese Vorbelegung wieder her.
+- Der Filter „Kartennamen / Symbole“ ist nur in der Vektor-Ansicht bedienbar.
+- MapLibre (6.18.0) liegt als lokale Dateien im Programm und wird nicht mehr aus dem Internet geladen.
+- Dunkle Oberfläche in einheitlicher Farbpalette.
+- Das Programm heißt überall „AktionskartenGenerator“.
+- Die Fenstergröße richtet sich nach dem Bildschirm und wird nicht gemerkt.
+- Im Reiter „Symbol-Punkte“ steht die Farbwahl im Feld „Symbole“ unter den Symbolen.
+- Den Text eines Symbol-Punkts gibst du im Feld „Ausgewählter Punkt“ ein.
+- Raster und Vektor zeigen denselben Kartenausschnitt im selben Maßstab.
+- Wählst du ein Suchergebnis im Klappmenü, springt die Karte direkt dorthin.
+- Die Kartenebene Shortbread gibt es nicht mehr; Projekte, die sie nutzten, öffnen mit „Standard“.
+- Filter „Kartennamen / Symbole“: neuer Typ „ÖPNV“ für Haltestellen und Bahnhöfe. Der Regler „POIs ab Zoom“
+  blendet POIs früher oder später ein; die Auswahl „Darstellungsgröße“ entfällt.
+- Kartenebenen ohne POIs (Humanitär in der Vektor-Ansicht) sperren den Filter.
+- „Map neu laden“ lädt in der Vektor-Ansicht die Vektorkarte neu.
+- Rückgängig (Strg+Z) und Wiederholen (Strg+Y) betreffen nur Inhalte: Punkte, Texte, Bilder, Routen, Zonen
+  und den Titel. Kartenausschnitt und Einstellungen bleiben, wie sie sind.
+- Der POI-Typ „Sakral / Religion“ heißt jetzt „Religiös“.
+- Die Nachfrage bei „Zurücksetzen“ hat die Knöpfe „Ja“ und „Nein“.
+- Jede Kartenart merkt sich ihre eigene Kartenebene: Vektor beginnt mit „Fahrrad“, Raster mit „Standard“.
+- Reiter „Routen“: der Knopf „Kopieren“ unter der Wegbeschreibung legt den Text in die Zwischenablage.
+- Reiter „Legende / Textfeld“: Auswahl „Bestehende Textfelder“ und ein Name je Textfeld, wie bei den Routen.
+  Der Haken „Routen hinzufügen“ heißt jetzt „Routen Legende hinzufügen“.
+- Der Knopf „Neues Textfeld“ legt ein weiteres Textfeld an. „Position“ steht direkt unter „Name“.
+- Ein weiteres Textfeld entsteht nur noch über „Neues Textfeld“. Ist keins gewählt, ändern „Textfeld anzeigen“,
+  „Feld aktualisieren“ und „Routen Legende hinzufügen“ nichts; die Statuszeile sagt es dir. Das erste Textfeld
+  entsteht wie bisher auch über „Textfeld anzeigen“.
+- Neue Position „Zentriert“: das Textfeld steht waagerecht und senkrecht in der Mitte der Karte.
+- Die Vektor-Ansicht ist dunkel, solange die Karte noch lädt (vorher hell).
+- Reiter „Routen“: wählst du eine berechnete Route und änderst die Berechnungsart, wird die Route an Ort und
+  Stelle neu berechnet. Nummer, Name, Farbe und Breite bleiben.
+- Meldungsfenster und Statuszeilen erscheinen in der gewählten Sprache.
+
+Online-Dienste / Datenschutz
+- Ortssuche, Rasterkacheln, Routenberechnung und die Vektor-Ansicht brauchen Internet.
+- Genutzte Dienste:
+  Ortssuche: nominatim.openstreetmap.org
+  Rasterkacheln: tile.openstreetmap.org (Standard), tile-cyclosm.openstreetmap.fr (Fahrrad),
+  tile.openstreetmap.fr (Humanitär)
+  Routenberechnung: routing.openstreetmap.de, als Ausweich router.project-osrm.org
+  Vektor-Ansicht: tiles.openfreemap.org (OpenFreeMap)
+- Dorthin gehen: der Suchtext, die betrachteten Kartenausschnitte sowie Start-, Ziel- und
+  Zwischenpunkte von Routen.
+- Wie bei jedem Abruf sehen die Dienste außerdem deine IP-Adresse. Suche, Rasterkacheln und Routing
+  bekommen zusätzlich die Systemsprache, die Vektor-Ansicht die übliche Browser-Kennung
+  (Betriebssystem, Chromium-Version). Der Programmname wird nicht übertragen.
+- Das Programm startet in der Vektor-Ansicht: OpenFreeMap wird also ab Programmstart angesprochen,
+  und nur, solange du die Vektor-Ansicht gewählt hast. In der Vektor-Ansicht werden keine
+  Rasterkacheln abgerufen.
+- Die Ortssuche sendet erst, wenn du Enter drückst oder auf „Suchen“ klickst.
+- Jede Suche, jeder Kartenausschnitt und jede Route geht mit deiner IP-Adresse an die genannten
+  Dienste. Bei sensiblen Orten nutze ein VPN oder Tor, dann sehen die Dienste nicht deine eigene
+  IP-Adresse; die Anfragen selbst (Orte, Ausschnitte, Routen) sehen sie weiterhin.
+
+Daten auf dem Rechner
+- Projekt-, JPG- und PDF-Dateien liegen nur dort, wo du sie speicherst.
+- Der Rasterkachel-Cache liegt in ~/.cache/AktionskartenGenerator/osm_tiles und wird beim
+  Beenden und beim Programmstart gelöscht.
+- Die Vektor-Ansicht nutzt ein Profil ohne dauerhaften Cache und ohne dauerhafte Cookies.
+  Qt/Chromium können trotzdem allgemeine temporäre Dateien anlegen.
+
+Reste älterer Versionen (bis 2.8)
+- Frühere Versionen waren kopierte Ordner mit eigenen Startdateien. Das Paket fasst sie
+  nicht an.
+- Wenn du sie nicht mehr brauchst, kannst du selbst löschen:
+  den alten Programmordner
+  ~/.venv_aktionskarten_generator
+  ~/.local/share/applications/aktionskarten-generator.desktop (falls angelegt)
+- Deine Projekt-, JPG- und PDF-Dateien bleiben davon unberührt, solange sie nicht in diesen Ordnern liegen.
+
+Entfernen von 2.9
+- sudo apt remove aktionskartengenerator
+  Das entfernt Programm, Menüeintrag und Icon.
+- Zurück bleiben kann der leere Ordner ~/.cache/AktionskartenGenerator. Den kannst du löschen.
