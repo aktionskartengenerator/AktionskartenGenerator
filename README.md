@@ -54,7 +54,7 @@ Beenden und beim Programmstart geleert.
 
 Tests liegen in `Build/Tests/`.
 
-Fertige Installer gibt es hier noch nicht; sie folgen später als Release. `Info_Win.txt` und
+Fertige Installer für Windows und Linux findest du unter „Releases“. `Info_Win.txt` und
 `Info_Linux.txt` sind die Begleittexte dieser Installer.
 
 ### Lizenz
@@ -116,7 +116,7 @@ program exits and when it starts.
 
 Tests are in `Build/Tests/`.
 
-Ready-made installers are not available here yet; they will follow as a release. `Info_Win.txt` and
+Ready-made installers for Windows and Linux are available under “Releases”. `Info_Win.txt` and
 `Info_Linux.txt` are the texts that accompany these installers (German).
 
 ### License

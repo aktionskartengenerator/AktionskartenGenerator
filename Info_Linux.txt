@@ -16,6 +16,8 @@ Installation (.deb)
 - Python musst du dafür nicht installieren; das Paket bringt alles mit.
 - Das Programm schreibt kein Debug-Log.
 - Diese Info liegt danach unter /usr/share/doc/aktionskartengenerator/Info.txt.
+- Lizenz: GPL-3.0-or-later. Die Lizenztexte, auch die der enthaltenen Fremdanteile, liegen unter
+  /usr/share/doc/aktionskartengenerator/Lizenzen. Quelltext: https://github.com/aktionskartengenerator/AktionskartenGenerator
 
 Neu in 2.9
 - Kartenart im Reiter „Karten Ausschnitt / Orte“: Raster oder Vektor. Die Wahl wird im Projekt gespeichert.

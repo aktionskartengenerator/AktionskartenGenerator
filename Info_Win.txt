@@ -14,6 +14,8 @@ Installation (Setup)
 - Python musst du dafür nicht installieren; das Setup bringt alles mit.
 - Das Programm schreibt kein Debug-Log.
 - Diese Info liegt danach als Info.txt im Programmordner.
+- Lizenz: GPL-3.0-or-later. Die Lizenztexte, auch die der enthaltenen Fremdanteile, liegen im
+  Ordner Lizenzen im Programmordner. Quelltext: https://github.com/aktionskartengenerator/AktionskartenGenerator
 - Für Windows 10 (ab 1903) und Windows 11, 64 Bit.
 
 Neu in 2.9
