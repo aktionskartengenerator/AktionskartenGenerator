@@ -8,6 +8,8 @@ Mit dem Programm kannst du für Aktionen, Demos und Ähnliches Karten zum Ausdru
 erstellen – ohne Vorkenntnisse, mit automatischem Routenfinder und vielen Gestaltungsmöglichkeiten.
 Vorbild für das Projekt war das ehemalige aktionskarten noblogs.
 
+Das Programm ist Open Source (GPL-3.0-or-later): Du darfst es frei nutzen, weitergeben und verändern.
+
 Installer für Linux und Windows findest du unter „Releases“.
 
 ### Funktionen
@@ -71,6 +73,8 @@ Copyright © AktionskartenGenerator contributors
 With this program you can create maps for actions, demonstrations and similar events, to print and
 pass around – no prior knowledge needed, with an automatic route finder and many design options.
 The project was inspired by the former aktionskarten noblogs.
+
+The program is open source (GPL-3.0-or-later): you are free to use, share and modify it.
 
 Installers for Linux and Windows are available under “Releases”.
 
