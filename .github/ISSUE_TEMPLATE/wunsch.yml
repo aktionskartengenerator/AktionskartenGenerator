@@ -1,0 +1,29 @@
+name: Wunsch / Request
+description: Eine neue Funktion oder eine Verbesserung vorschlagen. / Suggest a new feature or an improvement.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: wunsch
+    attributes:
+      label: Was wünschst du dir? / What would you like?
+    validations:
+      required: true
+  - type: textarea
+    id: wozu
+    attributes:
+      label: Wozu brauchst du das? / What do you need it for?
+      description: Ein Beispiel aus der Praxis hilft. / A practical example helps.
+    validations:
+      required: true
+  - type: textarea
+    id: alternativen
+    attributes:
+      label: Wie behilfst du dir bisher? / How do you work around it so far?
+  - type: dropdown
+    id: system
+    attributes:
+      label: Betriebssystem / Operating system
+      options:
+        - Windows
+        - Linux
+        - Beide / Both

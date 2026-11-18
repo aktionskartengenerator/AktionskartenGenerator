@@ -1,0 +1,66 @@
+name: Fehler melden / Report a bug
+description: Etwas funktioniert nicht wie erwartet. / Something does not work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bitte keine sensiblen Orte, Routen oder Projektdateien anhängen. Screenshots vorher prüfen.
+        Please do not attach sensitive places, routes or project files. Check screenshots first.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Steht im Fenstertitel. / Shown in the window title.
+      placeholder: "2.9"
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: Betriebssystem / Operating system
+      options:
+        - Windows 10
+        - Windows 11
+        - Linux Mint
+        - Ubuntu
+        - Debian
+        - Anderes / Other
+    validations:
+      required: true
+  - type: dropdown
+    id: start
+    attributes:
+      label: Wie gestartet? / How started?
+      options:
+        - Installer (.exe / .deb)
+        - Aus dem Quelltext / From source
+    validations:
+      required: true
+  - type: textarea
+    id: schritte
+    attributes:
+      label: Schritte zum Nachstellen / Steps to reproduce
+      placeholder: |
+        1. …
+        2. …
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Erwartetes Verhalten / Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: tatsaechlich
+    attributes:
+      label: Tatsächliches Verhalten / Actual behaviour
+      description: Fehlermeldung möglichst wörtlich. / Error message as literally as possible.
+    validations:
+      required: true
+  - type: textarea
+    id: zusatz
+    attributes:
+      label: Weitere Angaben / Additional information
+      description: Kartenart (Raster/Vektor), Kartenebene, Screenshots. / Map type (raster/vector), map layer, screenshots.
